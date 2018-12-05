@@ -21,27 +21,43 @@ body {
 
 .container {
 	padding: 30px;
-	margin: 20px 0 0 0;
-	background-color: white;
+	height:100% !important;
+	background-color: #faedff;
 	min-width: 1000px !important;
 	max-width:1000px !important;
 
 		
 }
 
+.gridArea {
+	display: grid;
+	grid-template-columns: repeat(auto-fill, minmax(18.75px,1fr)); 
+	grid-template-rows: repeat(auto-fill, minmax(18.75px,1fr));
+/*in order to modify the grid box size, we would need to modify in js the grid box value of the columns and rows, for example
+if the grid is 600px we would divide 600/user input(32, to obtain 32 grid boxes), and we would update the min value of the columns and rows using the result(18.75px)*/
+
+	grid-column-gap:0;
+	grid-row-gap: 0;
+	min-width: 600px !important;
+	max-width: 600px !important;
+	min-height: 600px !important;
+	max-height: 600px !important;
+	overflow: hidden;
+	margin: 15px auto 0;
+
+
 
 }
-.container div {
-	width:  30px;
-	height: 30px;
+.gridArea div {
+	width: 100%;
+    padding-bottom: 100%;
+	background-color: white;
+	display: block;
+	box-shadow: -.2px -.2px #818181;
+	
 	margin:0;
 	padding: 0;
-	background-color: red;
-	position: relative;
-	display: inline-grid;
-
-
 }
-.container .grid:hover {
+.gridArea div:hover {
 	background-color: blue;
 }
