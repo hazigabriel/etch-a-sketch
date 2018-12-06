@@ -31,8 +31,8 @@ body {
 
 .gridArea {
 	display: grid;
-	grid-template-columns: repeat(auto-fill, minmax(18.75px,1fr)); 
-	grid-template-rows: repeat(auto-fill, minmax(18.75px,1fr));
+	grid-template-columns: repeat(auto-fill, minmax(50px,1fr)); 
+	grid-template-rows: repeat(auto-fill, minmax(50px,1fr));
 /*in order to modify the grid box size, we would need to modify in js the grid box value of the columns and rows, for example
 if the grid is 600px we would divide 600/user input(32, to obtain 32 grid boxes), and we would update the min value of the columns and rows using the result(18.75px)*/
 
