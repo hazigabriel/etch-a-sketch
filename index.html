@@ -1,8 +1,12 @@
 <html>
 	<head>
 		<title>Etch-a-sketch</title>
-		<link rel="stylesheet" href="style.css">
 		<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+
+		<link rel="stylesheet" href="style.css">
+
+
+	
 
 	</head>
 	<body>
@@ -12,39 +16,52 @@
 		</div>
 		
 -->	
-
-		<div class="container col-md-6">
+		<div class="container">
 			<div class="row">
 
 
-				<div class="col-md-3">
-					<h5>Please input the grid size (min 16, max 64)</h5>
+				<div class="col-md-2">
+					<h6>Please input the grid size (min 1, max 64)</h6>
 				</div>
 			
 				<div class="col-md-2">
-						<textarea class="form-control form-inline " id="userInput" rows="1"></textarea>
+						<textarea class="form-control form-inline " id="userInput" rows="1">16</textarea>
 				</div>
 
-				<div class="col-md-1">
-					<button type="button" class="btn btn-outline-dark" id="userSubmit">Generate grid</button>
-				</div>
-
-				<div class="col-md-2"></div> <!-- empty space -->
-						
 				<div class="col-md-2">
-					<h5>Erase grid</h5>
+					<button type="button" class="btn btn-outline-dark" id="userSubmit">Generate grid</button>
+
+
 				</div>
 
-				<div class="col-md-1">
+				<div class="col-md-4">
+					<div class="btn-group btn-group-toggle" data-toggle="buttons" id="toggleColor">
+					  <label id="randomColor"class="btn btn-outline-primary active" >
+					    <input type="radio" name="options"  autocomplete="off" checked>Random color
+					  </label>
+					  <label  id="monochrome" class="btn btn-outline-dark">
+					    <input type="radio" name="options" autocomplete="off"> Monochrome
+					  </label>
+					</div>	
+
+
+				</div> 
+				
+			
+
+				<div class="col-md-1 moveLeft">
+					<h6>Erase grid</h6>
+
+				</div>
+
+				<div class="col-md-1 moveLeft">
 					<button type="button" class="btn btn-outline-danger" id="resetGrid">Start over!</button>
 				
-				</div>
 			
-			</div>
+				</div>
 
 			<div class="gridArea" id="grid">
-				<div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div><div></div>
-				<!--added 16*16 divs, to have an 16x16 grid by default  -->
+			
 			</div>	
 
 		
@@ -53,8 +70,20 @@
 		</div>
 
 
+	
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
 
-		<script src="script.js"></script>
+	<script src="script.js"></script>
+
+	 <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.3.1/jquery.min.js"></script>
+
+	
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/js/bootstrap.min.js" integrity="sha384-ChfqqxuZUCnJSK3+MXmPNIyE6ZbWh2IMqE241rYiqJxyMiZ6OW/JmZQ5stwEULTy" crossorigin="anonymous"></script>
+	
+
+
+
+
 	</body>
 
 
