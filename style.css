@@ -20,7 +20,6 @@ body {
 	height: 50px;		
 	}
 .container-fluid h2 {
-	
 }
 
 .container {
@@ -28,9 +27,7 @@ body {
 	height:100% !important;
 	background-color: #e0f9f3;
 	min-width: 1000px !important;
-	max-width:1000px !important;
-
-		
+	max-width:1000px !important;	
 }
 
 .gridArea {
@@ -51,7 +48,7 @@ body {
     padding-bottom: 100%;
 	background-color: white;
 	display: block;
-	box-shadow: -.2px -.2px #818181 !important;
+	box-shadow: -.4px -.4px #A9A9A9	 !important;
 	margin:0;
 	padding: 0;
 }
@@ -64,6 +61,4 @@ body {
 the fact that it was overlapping the main section of the website*/
 
 
-div.dropdown  div a {
-margin-top: 20px !important;
-}
+

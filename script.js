@@ -2,35 +2,47 @@ let userSubmit = document.getElementById("userSubmit");
 let resetGrid = document.getElementById("resetGrid");
 let userInput = document.getElementById("userInput");
 let grid = document.getElementById("grid");
-let toggleColor = document.getElementById("toggleColor");
 let gridBlock = document.getElementsByClassName("gridBlock");
 
 
 
-
 for(i = 0; i <= 16*16; i++) {
-const createGrid = document.createElement("div");
-createGrid.className = "gridBlock";
-grid.appendChild(createGrid);
-   };
+	const createGrid = document.createElement("div");
+	createGrid.className = "gridBlock";
+	grid.appendChild(createGrid);
+};
 
 let generateRandomColor = function(){
-	$(".gridBlock").hover(function(){
+
+	$(".gridBlock").mouseenter(function(){
 		$(this).css("background-color", "rgb(" + " " + Math.floor(Math.random() *256) + " " + Math.floor(Math.random() *256) + " " + Math.floor(Math.random() *256) + ")")
+	
 	})
 };
 
 let generateMonochrome = function(){
-	$(".gridBlock").hover(function(){
-		$(this).css("background-color", "rgb(0, 0, 0, 0.3)");
-	});
-};
-/*$(".gridBlock").hover(function(){ $(this).css("background-color", "rgb(234 32 132  0.3) ") } )c*/
 
- generateRandomColor();
-/*create the initial 16*16 grid, and generate a random color by default*/
+		
+	$(".gridBlock").mouseenter(function(){
+
+		$(this).css("background-color", "rgb(0, 0, 0)");
+		let shade = +this.style.opacity;
+     	if (shade < 1) {
+        		shade += 0.1;
+    	}
+        this.style.opacity = shade;		
+
+	})
+
 	
+};
 
+$("#randomColor").click(function(){
+	generateRandomColor();
+});
+$("#monochrome").click(function(){
+	generateMonochrome();
+})
 
 
 
@@ -57,33 +69,20 @@ userSubmit.onclick = function(){
 
 	} 
 
-	generateRandomColor();
 
 };
 
-
-$("#randomColor").click(function(){
-	generateRandomColor();
-});
-$("#monochrome").click(function(){
-	generateMonochrome();
-})
+if($("#randomColor").hasClass("active")) {
+		generateRandomColor();
+	} else {
+		generateMonochrome();
+	}
 
 
 $("#resetGrid").click(function(){
 	$(".gridBlock").css("background-color", "rgb(256 256 256)")
-})
-/*
-pseudo code
+	
 
-when click "random color" {
-	gridBlock.hover {
-	change color to random
-	}
-}
-when click "monochrome" {
-	gridBlock.hober {
-	add opacity//
-	}
-}
-*/
+})
+
+
